@@ -1,8 +1,8 @@
-# Prest POC
+# :elephant: pRESTground
 
-Application to test prest features
+A playground for prest.
 
-For the demo we need a postgres instance with a database demo and user postgres.
+For the tests we need a postgres instance with a database demo and user postgres.
 
 Using docker you can do:
 
