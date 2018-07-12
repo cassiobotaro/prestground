@@ -24,10 +24,15 @@ func main() {
 	// custom middleware applied in just one endpoint
 	adminRoutes := mux.NewRouter().PathPrefix("/admin").Subrouter()
 	adminRoutes.HandleFunc("/secret", SecretHandler)
-	r.PathPrefix("/").Handler(negroni.New(
+	r.PathPrefix("/admin").Handler(negroni.New(
 		negroni.HandlerFunc(adminOnly),
 		negroni.Wrap(adminRoutes),
 	))
+
+	// owner secret is just like admin but using only gorilla
+	ownerRoutes := r.PathPrefix("/owner").Subrouter()
+	ownerRoutes.HandleFunc("/secret", SecretHandler)
+	ownerRoutes.Use(ownerOnly)
 
 	// Call pREST cmd
 	cmd.Execute()
@@ -54,4 +59,14 @@ func adminOnly(w http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
 		return
 	}
 	next(w, r)
+}
+
+func ownerOnly(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.Header.Get("X-user") != "owner" {
+			http.Error(w, "nothing to see here", http.StatusUnauthorized)
+			return
+		}
+		next.ServeHTTP(w, r)
+	})
 }
