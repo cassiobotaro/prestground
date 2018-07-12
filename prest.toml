@@ -1,0 +1,9 @@
+migrations = "./migrations"
+debug = true
+
+[pg]
+user="postgres"
+database="demo"
+
+[jwt]
+default=false
