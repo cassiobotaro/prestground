@@ -109,7 +109,7 @@
   branch = "master"
   name = "github.com/mitchellh/mapstructure"
   packages = ["."]
-  revision = "bb74f1db0675b241733089d5a1faa5dd8b0ef57b"
+  revision = "f15292f7a699fcc1a38a80977f80a046874ba8ac"
 
 [[projects]]
   branch = "master"
@@ -134,7 +134,7 @@
     "postgres/statements",
     "scanner"
   ]
-  revision = "2ec5fe94e0eb9b14190af39b41a3d881da6614d2"
+  revision = "85747088618efc80a3e47d7814f39a4c856a77b5"
 
 [[projects]]
   branch = "master"
@@ -149,7 +149,7 @@
     ".",
     "router"
   ]
-  revision = "2defca481708df3e20511162b3dd338a662b7775"
+  revision = "c90158cbf8eea3fc64521542427c56bd2164c0fa"
 
 [[projects]]
   branch = "master"
@@ -230,7 +230,7 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "1b2967e3c290b7c545b3db0deeda16e9be4f98a2"
+  revision = "ac767d655b305d4e9612f5f6e33120b9176c4ad4"
 
 [[projects]]
   name = "golang.org/x/text"
@@ -267,6 +267,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "43cfefef5939ee74e085e22a43d456af6f13cbb2a960d115740d0b67e790fd73"
+  inputs-digest = "42e78c022e6ac3e663b46b3f69b1035782818945f46e659817be9ec98490378b"
   solver-name = "gps-cdcl"
   solver-version = 1
